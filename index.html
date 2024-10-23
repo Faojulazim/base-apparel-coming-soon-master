@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Base Apparel coming soon page</title>
+  </head>
+  <body
+    class="font-josefinSans min-h-[100dvh] bg-myLinear from-fromWhiteFirst to-fromWhiteSecond"
+  >
+    <div class="flex justify-center md:bg-white">
+      <div
+        class="md:flex md:flex-col items-center md:pt-10 relative md:w-[60%] md:bg-[url('/images/bg-pattern-desktop.svg')] md:bg-no-repeat md:bg-cover md:bg-fromWhiteSecond"
+      >
+        <nav
+          class="px-9 justify-self-start py-6 md:py-8 md:w-[70%] md:max-w-[500px] md:px-0"
+        >
+          <img class="w-[130px] md:w-[200px]" src="images/logo.svg" alt="" />
+        </nav>
+        <img
+          id="mobileImg"
+          class="object-cover w-full md:hidden"
+          src="images/hero-mobile.jpg"
+          alt=""
+        />
+        <div
+          class="mt-10 md:mt-16 md:absolute md:top-[50%] md:translate-y-[-50%] md:w-[70%] md:max-w-[480px]"
+        >
+          <h1
+            class="text-5xl text-center max-w-[300px] uppercase tracking-[10px] font-semibold mx-auto text-DarkGrayishRed md:text-start md:mx-0"
+          >
+            <span class="font-[300] text-DesaturatedRed text-start">We're </span
+            >coming soon
+          </h1>
+          <p
+            class="mt-4 md:mt-6 text-DesaturatedRed text-center mx-auto max-w-[80%] md:text-start md:mx-0 md:max-w-[100%]"
+          >
+            Hello fellow shoppers! We're currently building our new fashion
+            store. Add your email below to stay up-to-date with announcements
+            and our launch deals.
+          </p>
+          <form
+            action=""
+            id="form"
+            class="pt-10 mx-auto max-w-[350px] md:mx-0 md:w-[100%] md:max-w-full w-[80%]"
+          >
+            <div
+              class="border border-DesaturatedRed flex items-center rounded-full justify-between"
+              id="borderDiv"
+            >
+              <input
+                type="text"
+                placeholder="Email Address"
+                class="outline-none ml-6 w-[72%] bg-inherit placeholder:text-fromPinkFirst placeholder:bg-inherit text-[18px]"
+                id="emailField"
+                autocomplete="off"
+              />
+
+              <div class="relative right-[-1px] z-50">
+                <button
+                  class="bg-myLinear from-fromPinkFirst to-fromPinkSecond w-[75px] rounded-full flex justify-center items-center py-4 md:w-[85px] md:py-[1.13rem]"
+                  id="submitBtn"
+                >
+                  <img src="images/icon-arrow.svg" alt="" />
+                </button>
+              </div>
+            </div>
+            <p
+              class="text-SoftRed w-fit mt-1 ml-5 md:ml-10 hidden"
+              id="errorParagraph"
+            >
+              Please provide a valid email
+            </p>
+          </form>
+        </div>
+      </div>
+      <section
+        class="bg-[url('/images/hero-desktop.jpg')] bg-cover h-screen bg-no-repeat md:w-[40%] ml-auto hidden md:block"
+        id="desktopImg"
+      ></section>
+      <script type="module" src="script.js"></script>
+    </div>
+  </body>
+</html>
