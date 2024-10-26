@@ -20,3 +20,4 @@ postcss.config.js
 tailwind.config.js
 style-guide.md
 README-template.md
+dist
