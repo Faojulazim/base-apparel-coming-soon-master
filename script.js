@@ -7,16 +7,18 @@ emailField.addEventListener("input", (e) => {
   const emailFieldValue = document.querySelector("#emailField").value;
   const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
   if (!regex.test(emailFieldValue) && emailFieldValue.length) {
-    borderDiv.classList.remove("border-DesaturatedRed");
-    borderDiv.classList.add("border-[hsl(0_93%_68%)]");
-    errorParagraph.classList.remove("hidden");
+    remove(borderDiv, "border-DesaturatedRed");
+    remove(errorParagraph, "text-lime-600", errorParagraph, "hidden");
+    add(
+      errorParagraph,
+      "text-[hsl(0_93%_68%)]",
+      borderDiv,
+      "border-[hsl(0_93%_68%)]"
+    );
     errorParagraph.textContent = "Please provide a valid email";
-    errorParagraph.classList.remove("text-lime-600");
-    errorParagraph.classList.add("text-[hsl(0_93%_68%)]");
   } else {
-    borderDiv.classList.remove("border-[hsl(0_93%_68%)]");
-    borderDiv.classList.add("border-DesaturatedRed");
-    errorParagraph.classList.add("hidden");
+    add(borderDiv, "border-DesaturatedRed", errorParagraph, "hidden");
+    remove(borderDiv, "border-[hsl(0_93%_68%)]");
   }
 });
 submitBtn.addEventListener("click", (e) => {
@@ -24,15 +26,21 @@ submitBtn.addEventListener("click", (e) => {
   const emailFieldValue = document.querySelector("#emailField").value;
   const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
   if (!regex.test(emailFieldValue)) {
-    errorParagraph.classList.add("text-[hsl(0_93%_68%)]");
-    errorParagraph.classList.remove("hidden");
-    errorParagraph.classList.remove("text-lime-600");
+    add(errorParagraph, "text-[hsl(0_93%_68%)]");
+    remove(errorParagraph, "hidden", errorParagraph, "text-lime-600");
     errorParagraph.textContent = "Please provide a valid email";
   } else {
-    errorParagraph.classList.remove("text-[hsl(0_93%_68%)]");
-    errorParagraph.classList.remove("hidden");
-    errorParagraph.classList.add("text-lime-600");
+    remove(errorParagraph, "text-[hsl(0_93%_68%)]", errorParagraph, "hidden");
+    add(errorParagraph, "text-lime-600");
     errorParagraph.textContent = "Submitted!";
     emailField.value = "";
   }
 });
+function remove(element1, remove1, element2 = element1, remove2 = remove1) {
+  element1.classList.remove(`${remove1}`);
+  element2.classList.remove(`${remove2}`);
+}
+function add(element1, add1, element2 = element1, add2 = add1) {
+  element1.classList.add(`${add1}`);
+  element2.classList.add(`${add2}`);
+}
