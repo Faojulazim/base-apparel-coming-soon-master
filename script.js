@@ -9,11 +9,7 @@ emailField.addEventListener("input", (e) => {
   if (!regex.test(emailFieldValue) && emailFieldValue.length) {
     remove(borderDiv, "border-DesaturatedRed");
     remove(errorParagraph, "text-lime-600", errorParagraph, "hidden");
-    add(
-      errorParagraph,
-      "text-[hsl(0_93%_68%)]",
-      borderDiv,
-      "border-[hsl(0_93%_68%)]"
+    add(errorParagraph, "text-[hsl(0_93%_68%)]", borderDiv, "border-[hsl(0_93%_68%)]"
     );
     errorParagraph.textContent = "Please provide a valid email";
   } else {
